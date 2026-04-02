@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { FinanceState, Transaction, Account, Role } from '../types';
+import { FinanceState, Transaction, Account, Role, ThemeMode } from '../types';
 
 const mockTransactions: Transaction[] = [
   { id: '1', date: '2024-03-28T10:00:00Z', name: 'Apple Store', category: 'Electronics', type: 'Expense', amount: 1299.00, status: 'Successful' },
@@ -23,10 +23,13 @@ export const useFinanceStore = create<FinanceState>()(
   persist(
     (set) => ({
       role: 'Admin',
+  theme: 'dark',
       transactions: mockTransactions,
       accounts: mockAccounts,
   selectedAccountId: mockAccounts.find((a) => a.isDefault)?.id ?? mockAccounts[0]?.id ?? null,
       setRole: (role: Role) => set({ role }),
+  setTheme: (theme: ThemeMode) => set({ theme }),
+  toggleTheme: () => set((state) => ({ theme: state.theme === 'dark' ? 'light' : 'dark' })),
   setSelectedAccountId: (id) => set({ selectedAccountId: id }),
       addTransaction: (transaction) => set((state) => ({
         transactions: [{ ...transaction, id: Math.random().toString(36).substr(2, 9) }, ...state.transactions]

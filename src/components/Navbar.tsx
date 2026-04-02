@@ -10,6 +10,8 @@ import {
   Menu,
   Search,
   Bell,
+  Sun,
+  Moon,
   X,
   Shield,
   Eye
@@ -27,7 +29,7 @@ const navItems = [
 ];
 
 export const Navbar = () => {
-  const { role, setRole } = useFinanceStore();
+  const { role, setRole, theme, toggleTheme } = useFinanceStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -248,6 +250,16 @@ export const Navbar = () => {
           <button className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white relative">
             <Bell size={16} />
             <span className="absolute top-2 right-2 w-2 h-2 bg-emerald-500 rounded-full border-2 border-[#0a0a0a]"></span>
+          </button>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white"
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            title={theme === 'dark' ? 'Light theme' : 'Dark theme'}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
           <NavLink to="/profile" className="w-10 h-10 rounded-full glass-button p-0.5">

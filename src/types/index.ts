@@ -2,6 +2,8 @@ export type Role = 'Admin' | 'Viewer';
 
 export type TransactionType = 'Income' | 'Expense';
 
+export type ThemeMode = 'dark' | 'light';
+
 export interface Transaction {
   id: string;
   date: string;
@@ -24,10 +26,13 @@ export interface Account {
 
 export interface FinanceState {
   role: Role;
+  theme: ThemeMode;
   transactions: Transaction[];
   accounts: Account[];
   selectedAccountId: string | null;
   setRole: (role: Role) => void;
+  setTheme: (theme: ThemeMode) => void;
+  toggleTheme: () => void;
   setSelectedAccountId: (id: string | null) => void;
   addTransaction: (transaction: Omit<Transaction, 'id'>) => void;
   updateTransaction: (id: string, transaction: Partial<Transaction>) => void;
