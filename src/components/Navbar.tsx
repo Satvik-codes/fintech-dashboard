@@ -102,7 +102,8 @@ export const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 px-8 py-6 pointer-events-none"
+  data-theme={theme}
+  className="fixed top-0 left-0 right-0 z-50 px-8 py-6 pointer-events-none"
       initial={false}
       animate={isNavHidden ? { y: '-110%', opacity: 0 } : { y: '0%', opacity: 1 }}
       transition={{ type: 'spring', stiffness: 420, damping: 34, mass: 0.8 }}
@@ -133,18 +134,26 @@ export const Navbar = () => {
                 to={item.path}
                 className={cn(
                   "relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2",
-                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
+                  isActive
+                    ? "text-white data-[theme=light]:text-slate-950"
+                    : "text-slate-400 hover:text-slate-200 data-[theme=light]:text-slate-600 data-[theme=light]:hover:text-slate-900"
                 )}
               >
                 {isActive && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/10 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+                    className="absolute inset-0 bg-white/10 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] data-[theme=light]:bg-slate-900/5 data-[theme=light]:shadow-[inset_0_1px_1px_rgba(2,6,23,0.08)]"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
-                  <item.icon size={16} className={cn(isActive ? "text-emerald-400" : "opacity-70")} />
+                  <item.icon
+                    size={16}
+                    className={cn(
+                      isActive ? "text-emerald-400" : "opacity-70",
+                      "data-[theme=light]:opacity-90"
+                    )}
+                  />
                   {item.name}
                 </span>
               </NavLink>

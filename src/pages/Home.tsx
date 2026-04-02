@@ -393,7 +393,7 @@ export const Home = () => {
   
   return (
     <div className="space-y-6">
-      <h1 className="text-4xl font-bold text-white mb-6">My Dashboard</h1>
+  <h1 className="text-4xl font-bold text-white mb-6 [html[data-theme='light']_&]:text-slate-950">My Dashboard</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Main Content Area */}
