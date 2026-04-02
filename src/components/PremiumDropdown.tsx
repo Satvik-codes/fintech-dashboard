@@ -35,6 +35,14 @@ const toneClasses: Record<NonNullable<PremiumDropdownOption<string>['tone']>, st
   slate: 'text-slate-200',
 };
 
+const toneClassesLight: Record<NonNullable<PremiumDropdownOption<string>['tone']>, string> = {
+  emerald: 'text-emerald-700',
+  blue: 'text-blue-700',
+  rose: 'text-rose-700',
+  amber: 'text-amber-700',
+  slate: 'text-slate-950',
+};
+
 export function PremiumDropdown<T extends string>(props: PremiumDropdownProps<T>) {
   const {
     value,
@@ -140,15 +148,29 @@ export function PremiumDropdown<T extends string>(props: PremiumDropdownProps<T>
                 role="menuitem"
               >
                 <span className="flex items-center gap-2 min-w-0">
-                  {opt.icon ? <span className="shrink-0">{opt.icon}</span> : null}
+                  {opt.icon ? (
+                    <span className="shrink-0 [&_svg]:stroke-current [&_svg]:fill-none [html[data-theme='light']_&]:[&_svg]:stroke-black">
+                      {opt.icon}
+                    </span>
+                  ) : null}
                   <span
-                    className={cn('truncate', opt.tone ? toneClasses[opt.tone] : 'text-slate-200')}
+                      className={cn(
+                        'truncate',
+                        opt.tone ? toneClasses[opt.tone] : 'text-slate-200',
+                        // Light theme: ensure readable text while keeping tone
+                        opt.tone
+                          ? `[html[data-theme='light']_&]:${toneClassesLight[opt.tone]}`
+                          : "[html[data-theme='light']_&]:text-slate-950"
+                      )}
                   >
                     {opt.label}
                   </span>
                 </span>
                 {!hideSelectedIcon && active ? (
-                  <Check size={16} className="text-emerald-300" />
+                  <Check
+                    size={16}
+                    className="text-emerald-300 [html[data-theme='light']_&]:text-black"
+                  />
                 ) : null}
               </button>
             );
@@ -170,6 +192,7 @@ export function PremiumDropdown<T extends string>(props: PremiumDropdownProps<T>
           compact ? 'premium-dd-btn--sm' : 'premium-dd-btn--md',
           disabled && 'opacity-50 cursor-not-allowed',
           iconButton && 'premium-dd-btn--icon',
+          "[&_svg]:stroke-current [&_svg]:fill-none [html[data-theme='light']_&]:[&_svg]:stroke-black",
           buttonClassName
         )}
       >
@@ -178,11 +201,18 @@ export function PremiumDropdown<T extends string>(props: PremiumDropdownProps<T>
         ) : (
           <>
             <span className="flex items-center gap-2 min-w-0">
-              {selected?.icon ? <span className="shrink-0">{selected.icon}</span> : null}
+              {selected?.icon ? (
+                <span className="shrink-0 [&_svg]:stroke-current [&_svg]:fill-none [html[data-theme='light']_&]:[&_svg]:stroke-black">
+                  {selected.icon}
+                </span>
+              ) : null}
               <span
                 className={cn(
                   'truncate text-left',
-                  selected?.tone ? toneClasses[selected.tone] : 'text-slate-200'
+                  selected?.tone ? toneClasses[selected.tone] : 'text-slate-200',
+                  selected?.tone
+                    ? `[html[data-theme='light']_&]:${toneClassesLight[selected.tone]}`
+                    : "[html[data-theme='light']_&]:text-slate-950"
                 )}
               >
                 {selected?.label ?? placeholder ?? 'Select'}
@@ -190,7 +220,10 @@ export function PremiumDropdown<T extends string>(props: PremiumDropdownProps<T>
             </span>
             <ChevronDown
               size={compact ? 14 : 16}
-              className={cn('shrink-0 transition-transform', open && 'rotate-180')}
+              className={cn(
+                'shrink-0 transition-transform text-slate-300 [html[data-theme=\'light\']_&]:text-black',
+                open && 'rotate-180'
+              )}
             />
           </>
         )}

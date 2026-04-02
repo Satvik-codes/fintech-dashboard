@@ -66,8 +66,8 @@ export const Analytics = () => {
           <p className="text-slate-400 text-sm mt-1">Deep dive into your spending habits and trends</p>
         </div>
         
-        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-          <span className="text-xs font-medium text-slate-400">Timeframe:</span>
+        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 [html[data-theme='light']_&]:bg-black/[0.05] [html[data-theme='light']_&]:border-black/10">
+          <span className="text-xs font-medium text-slate-400 [html[data-theme='light']_&]:text-slate-800">Timeframe:</span>
           <PremiumDropdown
             size="sm"
             align="right"
@@ -75,6 +75,7 @@ export const Analytics = () => {
             options={timeframeOptions}
             onChange={(v) => setTimeframe(v as typeof timeframe)}
             menuClassName="w-44"
+            buttonClassName="[html[data-theme='light']_&]:text-slate-950"
           />
         </div>
       </div>
@@ -136,7 +137,7 @@ export const Analytics = () => {
               </div>
               <h4 className="font-bold">AI Insight</h4>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed [html[data-theme='light']_&]:text-slate-800">
               Your "Food & Dining" spending is <span className="text-primary font-bold">15% lower</span> than last month. Great job staying on budget!
             </p>
           </GlassCard>
@@ -148,7 +149,7 @@ export const Analytics = () => {
               </div>
               <h4 className="font-bold">Budget Alert</h4>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed [html[data-theme='light']_&]:text-slate-800">
               You've reached <span className="text-amber-500 font-bold">92%</span> of your shopping budget for March. Consider pausing non-essential purchases.
             </p>
           </GlassCard>
@@ -163,7 +164,7 @@ export const Analytics = () => {
             <div className="space-y-2">
               <div className="flex justify-between text-xs mb-1">
                 <span className="text-slate-400">New Car Fund</span>
-                <span className="text-white font-bold">65%</span>
+                <span className="text-white font-bold [html[data-theme='light']_&]:text-slate-950">65%</span>
               </div>
               <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                 <div className="h-full bg-blue-500 rounded-full" style={{ width: '65%' }}></div>

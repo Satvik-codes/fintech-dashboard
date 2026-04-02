@@ -405,7 +405,7 @@ export const Home = () => {
                 <div className="flex flex-col justify-between flex-1">
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Total balance</p>
-                    <h2 className="text-5xl font-bold text-white tracking-tight translate-y-[20px]">
+                    <h2 className="text-5xl font-bold text-white tracking-tight translate-y-[20px] [html[data-theme='light']_&]:text-slate-950">
                       <CurrencyValue value={mock.totalBalance} />
                     </h2>
                     <p className="text-xs text-slate-500 mt-6 translate-y-[25px]">{mock.balanceDeltaText}</p>
@@ -422,7 +422,7 @@ export const Home = () => {
                     <motion.button 
                       whileHover={{ y: -10 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full bg-white/10 text-white text-xs font-bold hover:bg-white/20 transition-all whitespace-nowrap"
+                      className="px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full bg-white/10 text-white text-xs font-bold hover:bg-white/20 transition-all whitespace-nowrap [html[data-theme='light']_&]:bg-black/[0.06] [html[data-theme='light']_&]:text-slate-900 [html[data-theme='light']_&]:hover:bg-black/[0.10]"
                     >
                       Top Up
                     </motion.button>
@@ -435,7 +435,7 @@ export const Home = () => {
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Balance trend</p>
                     <span className="text-xs font-bold text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-full">+12.4%</span>
                   </div>
-                  <div className="h-40 md:h-[12rem] rounded-3xl bg-black/20 border border-white/5 overflow-hidden">
+                  <div className="h-40 md:h-[12rem] rounded-3xl bg-black/20 border border-white/5 overflow-hidden [html[data-theme='light']_&]:bg-black/[0.04] [html[data-theme='light']_&]:border-black/10">
                     <ResponsiveContainer width="100%" height="100%">
                       <AreaChart data={balanceTrendData} margin={{ top: 22, right: 16, left: 16, bottom: 0 }}>
                         <defs>
@@ -465,7 +465,7 @@ export const Home = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider mb-1">Income</p>
-        <h3 className="text-3xl font-bold text-white">
+  <h3 className="text-3xl font-bold text-white [html[data-theme='light']_&]:text-slate-950">
             <CurrencyValue value={mock.incomeThisWeek} />
                     </h3>
                     <p className="text-[10px] text-slate-500 mt-1">This week's income</p>
@@ -478,7 +478,7 @@ export const Home = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider mb-1">Expense</p>
-                    <h3 className="text-3xl font-bold text-white">
+                    <h3 className="text-3xl font-bold text-white [html[data-theme='light']_&]:text-slate-950">
             <CurrencyValue value={-Math.abs(mock.expenseThisWeek)} />
                     </h3>
                     <p className="text-[10px] text-slate-500 mt-1">This week's income</p>
@@ -493,10 +493,10 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <GlassCard className="h-[380px]">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-white">Revenue flow</h3>
+                <h3 className="text-lg font-bold text-white [html[data-theme='light']_&]:text-slate-950">Revenue flow</h3>
                 <div className="flex gap-2">
-                  <button className="px-4 py-1.5 rounded-full bg-white/5 text-[10px] font-bold text-slate-400">Monthly</button>
-                  <button className="p-1.5 rounded-full bg-white/5 text-slate-400"><ArrowUpRight size={14} /></button>
+                  <button className="px-4 py-1.5 rounded-full bg-white/5 text-[10px] font-bold text-slate-400 [html[data-theme='light']_&]:bg-black/[0.05] [html[data-theme='light']_&]:text-slate-700">Monthly</button>
+                  <button className="p-1.5 rounded-full bg-white/5 text-slate-400 [html[data-theme='light']_&]:bg-black/[0.05] [html[data-theme='light']_&]:text-slate-700"><ArrowUpRight size={14} /></button>
                 </div>
               </div>
               <div className="h-[240px] w-full">
@@ -527,8 +527,8 @@ export const Home = () => {
 
             <GlassCard className="min-h-[420px] md:h-[380px]">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-white">Expense split</h3>
-                <button className="px-4 py-1.5 rounded-full bg-white/5 text-[10px] font-bold text-slate-400">Aug</button>
+                <h3 className="text-lg font-bold text-white [html[data-theme='light']_&]:text-slate-950">Expense split</h3>
+                <button className="px-4 py-1.5 rounded-full bg-white/5 text-[10px] font-bold text-slate-400 [html[data-theme='light']_&]:bg-black/[0.05] [html[data-theme='light']_&]:text-slate-700">Aug</button>
               </div>
               <div className="flex flex-1 items-center justify-center gap-8 lg:gap-10 flex-col sm:flex-row px-2 sm:px-0">
     <div className="relative w-44 h-44 sm:w-48 sm:h-48 lg:w-44 lg:h-44">
@@ -549,7 +549,7 @@ export const Home = () => {
                   </ResponsiveContainer>
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-2">
                     <span className="text-[10px] text-slate-500 uppercase font-bold">Total</span>
-                    <span className="text-2xl font-bold text-white">{Math.abs(mock.expenseThisWeek).toLocaleString()}<span className="text-xs ml-0.5 text-primary">₹</span></span>
+                    <span className="text-2xl font-bold text-white [html[data-theme='light']_&]:text-slate-950">{Math.abs(mock.expenseThisWeek).toLocaleString()}<span className="text-xs ml-0.5 text-primary">₹</span></span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-x-8 sm:gap-x-10 gap-y-5 sm:gap-y-6">
@@ -558,7 +558,7 @@ export const Home = () => {
                       <p className="text-xs text-slate-500 font-medium">{item.name}</p>
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
-                        <span className="text-base font-bold text-white">{item.value}%</span>
+                        <span className="text-base font-bold text-white [html[data-theme='light']_&]:text-slate-950">{item.value}%</span>
                       </div>
                     </div>
                   ))}
@@ -572,17 +572,17 @@ export const Home = () => {
   <div className="lg:col-span-4 space-y-6">
           <GlassCard className="h-full flex flex-col" hoverEffect={false}>
       <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-bold text-white">My cards <span className="text-slate-500 font-normal ml-1">{accounts.length}</span></h3>
+              <h3 className="text-lg font-bold text-white [html[data-theme='light']_&]:text-slate-950">My cards <span className="text-slate-500 font-normal ml-1">{accounts.length}</span></h3>
               <div className="flex p-1 bg-white/5 rounded-full">
                 <button
                   onClick={() => navigate('/accounts')}
-                  className="px-4 py-1 rounded-full text-[10px] font-bold text-slate-400 hover:text-white transition-colors"
+                  className="px-4 py-1 rounded-full text-[10px] font-bold text-slate-400 hover:text-white transition-colors [html[data-theme='light']_&]:text-slate-600 [html[data-theme='light']_&]:hover:text-slate-950"
                 >
                   Add
                 </button>
                 <button
                   onClick={() => navigate('/accounts')}
-                  className="p-1 rounded-full text-slate-400 hover:text-white transition-colors"
+                  className="p-1 rounded-full text-slate-400 hover:text-white transition-colors [html[data-theme='light']_&]:text-slate-600 [html[data-theme='light']_&]:hover:text-slate-950"
                 >
                   <Plus size={14} />
                 </button>
@@ -626,7 +626,7 @@ export const Home = () => {
                       cycleCardStack();
                     }}
                     className={cn(
-                      "absolute top-0 left-0 w-full h-48 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between p-6 overflow-hidden cursor-pointer select-none pointer-events-auto",
+                      "absolute top-0 left-0 w-full h-48 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between p-6 overflow-hidden cursor-pointer select-none pointer-events-auto text-white [html[data-theme='light']_&]:text-black [html[data-theme='light']_&]:[&_\*]:text-black",
                       acc.id === selectedAccount?.id ? "ring-1 ring-emerald-400/40" : ""
                     )}
                     style={{
@@ -634,6 +634,14 @@ export const Home = () => {
                         `linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.80) 55%, ${acc.color}40 100%)`,
                     }}
                   >
+                    {/* Light-theme background override: remove ALL dark gradients */}
+                    <div
+                      className="absolute inset-0 hidden [html[data-theme='light']_&]:block pointer-events-none"
+                      style={{
+                        background:
+                          `linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.76) 55%, ${acc.color}22 100%)`,
+                      }}
+                    />
                     <div
                       className="absolute inset-0 opacity-70 pointer-events-none"
                       style={{
@@ -643,23 +651,23 @@ export const Home = () => {
                     />
                     <div className="flex justify-between items-start">
                       <span className={cn(
-                        "font-black italic text-white text-sm sm:text-base relative",
+                        "font-black italic text-white text-sm sm:text-base relative [html[data-theme='light']_&]:text-black",
                       )}>{acc.name}</span>
-                      <span className="text-xs text-slate-400">**** {acc.lastFour}</span>
+                      <span className="text-xs text-slate-400 [html[data-theme='light']_&]:text-black">**** {acc.lastFour}</span>
                     </div>
                     {index === 0 && (
                       <div className="space-y-4">
-                        <p className="text-sm sm:text-base font-medium tracking-[0.2em] text-emerald-500/80">
+                        <p className="text-sm sm:text-base font-medium tracking-[0.2em] text-emerald-500/80 [html[data-theme='light']_&]:text-black">
                           •••• •••• •••• {acc.lastFour}
                         </p>
                         <div className="flex justify-between items-end">
                           <div>
-                            <p className="text-[8px] text-slate-500 uppercase font-bold">Card Holder</p>
-                            <p className="text-xs font-bold text-white">Micky Larson</p>
+                            <p className="text-[8px] text-slate-500 uppercase font-bold [html[data-theme='light']_&]:text-black">Card Holder</p>
+                            <p className="text-xs font-bold text-white [html[data-theme='light']_&]:text-black">Micky Larson</p>
                           </div>
                           <div>
-                            <p className="text-[8px] text-slate-500 uppercase font-bold">Expires</p>
-                            <p className="text-xs font-bold text-white">07/25</p>
+                            <p className="text-[8px] text-slate-500 uppercase font-bold [html[data-theme='light']_&]:text-black">Expires</p>
+                            <p className="text-xs font-bold text-white [html[data-theme='light']_&]:text-black">07/25</p>
                           </div>
                         </div>
                       </div>
@@ -676,8 +684,8 @@ export const Home = () => {
             {/* Subscriptions */}
             <div className="mt-auto">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-white">Subscriptions <span className="text-slate-500 font-normal ml-1">5</span></h3>
-                <button className="text-[10px] font-bold text-slate-500 flex items-center gap-1 hover:text-white transition-colors">
+                <h3 className="text-lg font-bold text-white [html[data-theme='light']_&]:text-slate-950">Subscriptions <span className="text-slate-500 font-normal ml-1">5</span></h3>
+                <button className="text-[10px] font-bold text-slate-500 flex items-center gap-1 hover:text-white transition-colors [html[data-theme='light']_&]:hover:text-slate-950">
                   Manage <ChevronRight size={12} />
                 </button>
               </div>
@@ -688,7 +696,7 @@ export const Home = () => {
                     key={i} 
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all cursor-pointer [html[data-theme='light']_&]:bg-black/[0.05] [html[data-theme='light']_&]:border-black/10 [html[data-theme='light']_&]:text-slate-900 [html[data-theme='light']_&]:hover:bg-black/[0.08]"
                   >
                     <Icon size={18} />
                   </motion.div>
@@ -703,20 +711,20 @@ export const Home = () => {
                   <motion.div 
                     key={i} 
                     whileHover={{ x: 4, backgroundColor: "rgba(255,255,255,0.08)" }}
-                    className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.03] border border-white/[0.05] transition-all group cursor-pointer"
+                    className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.03] border border-white/[0.05] transition-all group cursor-pointer [html[data-theme='light']_&]:bg-black/[0.03] [html[data-theme='light']_&]:border-black/[0.08]"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+                      <div className="w-10 h-10 rounded-xl bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] [html[data-theme='light']_&]:bg-white [html[data-theme='light']_&]:border-black/10 [html[data-theme='light']_&]:text-slate-900 [html[data-theme='light']_&]:shadow-[inset_0_1px_1px_rgba(2,6,23,0.06)]">
                         <sub.icon size={18} />
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-white">{sub.name}</p>
+                        <p className="text-sm font-bold text-white [html[data-theme='light']_&]:text-slate-950">{sub.name}</p>
                         <p className="text-[10px] text-slate-400">{sub.date}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm font-bold text-white"><CurrencyValue value={sub.amount} /></span>
-                      <button className="text-slate-500 group-hover:text-white transition-colors"><MoreHorizontal size={16} /></button>
+                      <span className="text-sm font-bold text-white [html[data-theme='light']_&]:text-slate-950"><CurrencyValue value={sub.amount} /></span>
+                      <button className="text-slate-500 group-hover:text-white transition-colors [html[data-theme='light']_&]:group-hover:text-slate-950"><MoreHorizontal size={16} /></button>
                     </div>
                   </motion.div>
                 ))}
@@ -729,10 +737,10 @@ export const Home = () => {
       {/* Horizontal Recent Transactions Footer */}
       <GlassCard className="p-6 mt-12 overflow-hidden">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-lg font-bold text-white">Recent transactions <span className="text-slate-500 font-normal ml-1">234</span></h3>
+          <h3 className="text-lg font-bold text-white [html[data-theme='light']_&]:text-slate-950">Recent transactions <span className="text-slate-500 font-normal ml-1">234</span></h3>
           <button
             onClick={() => navigate('/transactions')}
-            className="text-[10px] font-bold text-slate-500 flex items-center gap-1 hover:text-white transition-colors"
+            className="text-[10px] font-bold text-slate-500 flex items-center gap-1 hover:text-white transition-colors [html[data-theme='light']_&]:hover:text-slate-950"
           >
             See All <ChevronRight size={12} />
           </button>
@@ -750,7 +758,7 @@ export const Home = () => {
                   {tx.type === 'Income' ? <ArrowUpRight size={20} /> : <ArrowDownRight size={20} />}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">{tx.name}</p>
+                  <p className="text-sm font-bold text-white [html[data-theme='light']_&]:text-slate-950">{tx.name}</p>
                   <p className="text-[10px] text-slate-400">{tx.category}</p>
                 </div>
                 <div className={cn(
@@ -773,11 +781,11 @@ export const Home = () => {
               <div className="flex items-center gap-6 flex-1 justify-end">
                 <p className={cn(
                   "text-xl font-bold",
-                  tx.type === 'Income' ? "text-emerald-400" : "text-white"
+                  tx.type === 'Income' ? "text-emerald-400" : "text-white [html[data-theme='light']_&]:text-slate-950"
                 )}>
                   {tx.type === 'Income' ? '+' : '-'}<CurrencyValue value={tx.amount} />
                 </p>
-                <button className="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-colors"><MoreHorizontal size={20} /></button>
+                <button className="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-colors [html[data-theme='light']_&]:hover:text-slate-950 [html[data-theme='light']_&]:hover:bg-black/[0.06]"><MoreHorizontal size={20} /></button>
               </div>
             </div>
           ))}

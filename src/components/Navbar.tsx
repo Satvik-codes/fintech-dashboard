@@ -119,9 +119,9 @@ export const Navbar = () => {
           <img
             src={logo}
             alt="Zorvyn logo"
-            className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain shrink-0"
+            className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain shrink-0 data-[theme=light]:brightness-0"
           />
-          <span className="text-base sm:text-xl font-bold tracking-tight text-white truncate">ZORVYN</span>
+          <span className="text-base sm:text-xl font-bold tracking-tight text-white truncate data-[theme=light]:text-black">ZORVYN</span>
         </button>
 
         {/* Center Pill Navigation */}
@@ -135,8 +135,8 @@ export const Navbar = () => {
                 className={cn(
                   "relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2",
                   isActive
-                    ? "text-white data-[theme=light]:text-slate-950"
-                    : "text-slate-400 hover:text-slate-200 data-[theme=light]:text-slate-600 data-[theme=light]:hover:text-slate-900"
+                    ? "text-white data-[theme=light]:text-black"
+                    : "text-slate-400 hover:text-slate-200 data-[theme=light]:text-black data-[theme=light]:hover:text-black"
                 )}
               >
                 {isActive && (
@@ -151,7 +151,7 @@ export const Navbar = () => {
                     size={16}
                     className={cn(
                       isActive ? "text-emerald-400" : "opacity-70",
-                      "data-[theme=light]:opacity-90"
+                      "data-[theme=light]:opacity-100 data-[theme=light]:text-black"
                     )}
                   />
                   {item.name}
@@ -173,7 +173,7 @@ export const Navbar = () => {
               onChange={(path) => navigate(path)}
               iconButton
               hideSelectedIcon
-              buttonClassName="glass-button rounded-full p-2.5"
+              buttonClassName="glass-button rounded-full p-2.5 [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black"
               buttonContent={<Menu size={18} />}
               menuClassName="w-44 z-[9999]"
             />
@@ -190,7 +190,7 @@ export const Navbar = () => {
                 { label: 'Viewer', value: 'Viewer', icon: <Eye size={16} className="text-blue-400" />, tone: 'blue' },
               ]}
               onChange={(v) => setRole(v as any)}
-              buttonClassName="glass-button rounded-full px-3 py-2"
+              buttonClassName="glass-button rounded-full px-3 py-2 data-[theme=light]:text-black"
               menuClassName="w-40"
             />
           </div>
@@ -211,7 +211,7 @@ export const Navbar = () => {
                 }
                 goToTransactionsSearch();
               }}
-              className="w-10 h-10 flex items-center justify-center text-slate-300 hover:text-white shrink-0"
+              className="w-10 h-10 flex items-center justify-center text-slate-300 hover:text-white shrink-0 data-[theme=light]:text-black data-[theme=light]:hover:text-black [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black"
             >
               <Search size={16} />
             </button>
@@ -232,7 +232,7 @@ export const Navbar = () => {
                       goToTransactionsSearch();
                     }
                   }}
-                  className="bg-transparent border-none outline-none text-sm text-white placeholder:text-slate-500 w-full"
+                  className="bg-transparent border-none outline-none text-sm text-white placeholder:text-slate-500 w-full data-[theme=light]:text-black data-[theme=light]:placeholder:text-slate-700"
                 />
               )}
             </AnimatePresence>
@@ -248,7 +248,7 @@ export const Navbar = () => {
                     setIsSearchExpanded(false);
                     setSearchValue('');
                   }}
-                  className="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white shrink-0"
+      className="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white shrink-0 data-[theme=light]:text-black data-[theme=light]:hover:text-black [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black"
                 >
                   <X size={14} />
                 </motion.button>
@@ -256,24 +256,24 @@ export const Navbar = () => {
             </AnimatePresence>
           </motion.div>
 
-          <button className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white relative">
+    <button className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white relative data-[theme=light]:text-black data-[theme=light]:hover:text-black [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black">
             <Bell size={16} />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-emerald-500 rounded-full border-2 border-[#0a0a0a]"></span>
+            <span className="absolute top-2 right-2 w-2 h-2 bg-emerald-500 rounded-full border-2 border-[#0a0a0a] data-[theme=light]:border-white"></span>
           </button>
 
           <button
             type="button"
             onClick={toggleTheme}
-            className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white"
+    className="w-10 h-10 rounded-full glass-button flex items-center justify-center text-slate-300 hover:text-white data-[theme=light]:text-black data-[theme=light]:hover:text-black [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black"
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             title={theme === 'dark' ? 'Light theme' : 'Dark theme'}
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
-          <NavLink to="/profile" className="w-10 h-10 rounded-full glass-button p-0.5">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-900/40 border border-emerald-500/20 flex items-center justify-center overflow-hidden">
-              <User size={16} className="text-emerald-400" />
+  <NavLink to="/profile" className="w-10 h-10 rounded-full glass-button p-0.5 data-[theme=light]:text-black [&_svg]:stroke-current [&_svg]:fill-none data-[theme=light]:[&_svg]:stroke-black">
+    <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-900/40 border border-emerald-500/20 flex items-center justify-center overflow-hidden data-[theme=light]:from-slate-950/[0.06] data-[theme=light]:to-slate-950/[0.02] data-[theme=light]:border-black/10">
+        <User size={16} className="text-emerald-400 data-[theme=light]:text-black" />
             </div>
           </NavLink>
         </div>

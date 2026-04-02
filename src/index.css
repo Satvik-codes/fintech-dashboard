@@ -443,6 +443,16 @@
     z-index: 60;
   }
 
+  html[data-theme="light"] .premium-dd-menu {
+    border-color: rgba(2, 6, 23, 0.10);
+    background:
+      radial-gradient(circle at 20% 20%, rgba(16,185,129,0.08) 0%, transparent 55%),
+      rgba(255, 255, 255, 0.92);
+    box-shadow:
+      0 20px 60px rgba(2, 6, 23, 0.14),
+      inset 0 1px 1px rgba(255, 255, 255, 0.85);
+  }
+
   /* When rendered with JS as fixed-position, ensure it always overlays */
   .premium-dd-menu--fixed {
     z-index: 9999;
@@ -462,14 +472,48 @@
     transition: background 160ms ease, border-color 160ms ease;
   }
 
+  html[data-theme="light"] .premium-dd-item {
+    color: rgb(2 6 23); /* slate-950 */
+  }
+
   .premium-dd-item:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.08);
   }
 
+  html[data-theme="light"] .premium-dd-item:hover {
+    background: rgba(2, 6, 23, 0.05);
+    border-color: rgba(2, 6, 23, 0.10);
+  }
+
   .premium-dd-item--active {
     background: rgba(16, 185, 129, 0.10);
     border-color: rgba(16, 185, 129, 0.18);
+  }
+
+  html[data-theme="light"] .premium-dd-item--active {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.24);
+  }
+}
+
+/* Navbar: force all lucide-react SVGs to render black in light mode.
+   (Lucide uses stroke; some icons won't follow text color unless stroke is set to currentColor.) */
+@layer components {
+  /* Absolute override: anything inside the navbar must be black in light mode. */
+  nav[data-theme="light"],
+  nav[data-theme="light"] * {
+    color: #000 !important;
+  }
+
+  nav[data-theme="light"] svg {
+    stroke: #000 !important;
+    fill: none !important;
+  }
+
+  nav[data-theme="light"] input::placeholder {
+    color: #000 !important;
+    opacity: 0.7;
   }
 }
 

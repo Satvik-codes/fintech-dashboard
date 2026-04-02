@@ -165,19 +165,19 @@ export const Transactions = () => {
       <GlassCard className="p-4">
         <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
           <div className="relative w-full lg:w-96">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 [html[data-theme='light']_&]:text-slate-800" size={18} />
             <input 
               type="text" 
               placeholder="Search transactions..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 focus:ring-1 focus:ring-primary/50 outline-none transition-all text-sm"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 focus:ring-1 focus:ring-primary/50 outline-none transition-all text-sm text-white placeholder:text-slate-500 [html[data-theme='light']_&]:text-slate-950 [html[data-theme='light']_&]:placeholder:text-slate-600"
             />
           </div>
 
       <div className="flex items-center gap-3 w-full lg:w-auto overflow-visible pb-2 lg:pb-0">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5">
-              <Filter size={16} className="text-slate-500" />
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 [html[data-theme='light']_&]:bg-black/[0.05]">
+              <Filter size={16} className="text-slate-500 [html[data-theme='light']_&]:text-slate-800" />
               <PremiumDropdown
                 size="sm"
                 align="left"
@@ -191,7 +191,7 @@ export const Transactions = () => {
               />
             </div>
 
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 [html[data-theme='light']_&]:bg-black/[0.05]">
               <PremiumDropdown
                 size="sm"
                 align="left"
@@ -250,7 +250,7 @@ export const Transactions = () => {
                   <td className="px-6 py-4 align-middle text-center">
                     <span className={cn(
                       "text-sm font-bold",
-                      tx.type === 'Income' ? "text-emerald-500" : "text-white"
+                      tx.type === 'Income' ? "text-emerald-500" : "text-white [html[data-theme='light']_&]:text-slate-950"
                     )}>
                       {tx.type === 'Income' ? '+' : '-'}
                       <CurrencyValue value={tx.amount} />
