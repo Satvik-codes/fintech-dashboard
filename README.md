@@ -1,6 +1,8 @@
 # Fintech Dashboard
 
 An elegant, high-fidelity fintech dashboard (brand: **Zorvyn**) built with **React + TypeScript + Vite**. It’s designed for a premium look and feel—glass panels, layered emerald gradients, smooth motion—and includes the core product surfaces you’d expect in a modern finance app: dashboard, accounts, transactions, and analytics.
+<img width="1917" height="952" alt="image" src="https://github.com/user-attachments/assets/0baaeb1b-4608-4345-a326-ed99c3f891b0" />
+
 
 ## Why it’s cool
 
