@@ -118,10 +118,10 @@ export const Navbar = () => {
         >
           <img
             src={logo}
-            alt="Zorvyn logo"
+            alt="logo"
             className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain shrink-0 data-[theme=light]:brightness-0"
           />
-          <span className="text-base sm:text-xl font-bold tracking-tight text-white truncate data-[theme=light]:text-black">ZORVYN</span>
+          <span className="text-base sm:text-xl font-bold tracking-tight text-white truncate data-[theme=light]:text-black">Wallet Warden</span>
         </button>
 
         {/* Center Pill Navigation */}
